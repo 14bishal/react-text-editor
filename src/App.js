@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+
+import { Analytics } from "@vercel/analytics/react";
+
 import CustomSunEditor from "./components/CustomSunEditor";
 
 import './styles.css';
@@ -72,6 +75,7 @@ const App = () => {
         </button>
       </div>
       <CustomSunEditor setContent={setContent} content={content} />
+      <Analytics />
 
     </div>
   );
