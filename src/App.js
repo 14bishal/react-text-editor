@@ -5,7 +5,6 @@ import './styles.css';
 
 const App = () => {
   const [content, setContent] = React.useState("");
-  console.log("content:", content)
 
   const handleDownload = () => {
     if (!content.trim()) {

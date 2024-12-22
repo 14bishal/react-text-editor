@@ -40,7 +40,6 @@ const CustomSunEditor = ({content, setContent}) => {
   };
 
   const handleChange = (val) => {
-    console.log("rawText", val);
     setContent(val);
   };
 
