@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import CustomSunEditor from "./components/CustomSunEditor";
 
@@ -78,6 +79,7 @@ const App = () => {
       </div>
       <CustomSunEditor setContent={setContent} content={content} />
       <Analytics />
+      <SpeedInsights />
 
     </div>
   );
