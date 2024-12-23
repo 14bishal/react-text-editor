@@ -51,7 +51,7 @@ const CustomSunEditor = ({content, setContent}) => {
           buttonList: TOOL_BAR_CONFIG,
           defaultTag: "div",
           minHeight: "580px",
-          minWidth:"920px",
+          maxWidth:"980px",
           showPathLabel: false,
           height: 'auto',
         }}
