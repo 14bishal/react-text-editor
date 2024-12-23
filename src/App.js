@@ -7,7 +7,7 @@ import CustomSunEditor from "./components/CustomSunEditor";
 import './styles.css';
 
 const App = () => {
-  const [content, setContent] = React.useState("");
+  const [content, setContent] = React.useState('');
 
   const handleDownload = () => {
     if (!content.trim()) {
