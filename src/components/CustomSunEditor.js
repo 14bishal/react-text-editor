@@ -44,14 +44,14 @@ const CustomSunEditor = ({content, setContent}) => {
   };
 
   return (
-    <div>
       <SunEditor
         defaultValue={content}
         onChange={handleChange}
         setOptions={{
           buttonList: TOOL_BAR_CONFIG,
           defaultTag: "div",
-          minHeight: "550px",
+          minHeight: "580px",
+          minWidth:"920px",
           showPathLabel: false,
           height: 'auto',
         }}
@@ -59,7 +59,6 @@ const CustomSunEditor = ({content, setContent}) => {
         autoFocus
         getSunEditorInstance={getSunEditorInstance}
       />
-    </div>
   );
 };
 export default CustomSunEditor;
