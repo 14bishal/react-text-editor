@@ -32,13 +32,15 @@ const App = () => {
                 border: 1px solid black;
             }
             th, td {
-                padding: 8px;
+                padding: 4px;
                 text-align: center;
             }
         </style>
     </head>
     <body>
+      <div style="padding: 20px 30px; margin-top: 50px;">
         ${content}
+      </div>
     </body>
     </html>`;
 
