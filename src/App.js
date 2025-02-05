@@ -25,7 +25,9 @@ const App = () => {
         <style>
             table {
                 border-collapse: collapse;
-                margin: 0 auto; 
+                margin: 0 auto;
+                table-layout: fixed;
+                overflow-wrap: anywhere;
                 /* Center the table */
                 /*  width: 80%; Adjust as needed */
             }
