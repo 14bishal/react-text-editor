@@ -26,7 +26,7 @@ const TOOL_BAR_CONFIG = [
     "table",
     "horizontalRule",
     "link",
-    "image",
+    // "image",
     "removeFormat",
   ],
 ];
@@ -37,6 +37,23 @@ const CustomSunEditor = ({content, setContent}) => {
 
   const getSunEditorInstance = (sunEditor) => {
     sunEditorRef.current = sunEditor;
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      const selection = window.getSelection();
+      let anchorNode = selection.anchorNode;
+  
+      // Ensure anchorNode is an element (not a text node)
+      if (anchorNode.nodeType === 3) {
+        anchorNode = anchorNode.parentElement; // Get its parent element
+      }
+  
+      if (anchorNode && anchorNode.closest("table")) {
+        event.preventDefault(); // Stop auto table creation
+        document.execCommand("insertParagraph"); // Insert a normal paragraph
+      }
+    }
   };
 
   const handleChange = (val) => {
@@ -50,14 +67,15 @@ const CustomSunEditor = ({content, setContent}) => {
         setOptions={{
           buttonList: TOOL_BAR_CONFIG,
           defaultTag: "div",
-          minHeight: "580px",
-          maxWidth:"980px",
+          minHeight: "680px",
+          maxWidth:"1145px",
           showPathLabel: false,
           height: 'auto',
         }}
-        setDefaultStyle="height: 300px; overflow: auto;"
+        setDefaultStyle="height: 700px; overflow: auto; border: 2px solid #CBD5E1 !important;"
         autoFocus
         getSunEditorInstance={getSunEditorInstance}
+        onKeyDown={handleKeyDown}
       />
   );
 };

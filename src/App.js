@@ -28,8 +28,6 @@ const App = () => {
                 margin: 0 auto;
                 table-layout: fixed;
                 overflow-wrap: anywhere;
-                /* Center the table */
-                /*  width: 80%; Adjust as needed */
             }
             table, th, td {
                 border: 1px solid black;
@@ -74,7 +72,6 @@ const App = () => {
         <button
           onClick={handleDownload}
           className="primary-button"
-          disabled={!content}
         >
           Download as HTML
         </button>

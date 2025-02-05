@@ -1,3 +1,9 @@
+body {
+  background: #F1F5FA;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -8,7 +14,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: calc(100%-40px);
   padding: 20px;
 }
 
@@ -43,6 +48,8 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: #CBD5E1 !important;
+  border: 2px solid #CBD5E1 !important;
 }
 
 /* Hide the footer section */
@@ -59,4 +66,13 @@
   &::-webkit-scrollbar {
     display: none !important;
   }
+}
+
+/* Remove negative margins from any div wrapping the table */
+.sun-editor-editable > div {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block !important; /* Ensure it doesn't behave unexpectedly */
+  width: 100% !important; /* Prevent layout shifts */
+  overflow: auto !important; /* Prevent unwanted resizing */
 }
