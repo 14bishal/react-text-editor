@@ -51,7 +51,7 @@ const CustomSunEditor = ({content, setContent}) => {
   
       if (anchorNode && anchorNode.closest("table")) {
         event.preventDefault(); // Stop auto table creation
-        document.execCommand("insertParagraph"); // Insert a normal paragraph
+        document.execCommand("insertHTML", false, "<br>");
       }
     }
   };
