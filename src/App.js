@@ -76,7 +76,7 @@ const App = () => {
           Download as HTML
         </button>
       </div>
-      <CustomSunEditor setContent={setContent} content={content} />
+      <CustomSunEditor setContent={setContent} content={content} handleDownload={handleDownload} />
       <Analytics />
       <SpeedInsights />
 
