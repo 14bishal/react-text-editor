@@ -38,7 +38,15 @@ const CustomSunEditor = ({content='', setContent=() => {}, handleDownload=() => 
   
       if (anchorNode && anchorNode.closest("table")) {
         event.preventDefault(); // Stop auto table creation
-        document.execCommand("insertHTML", false, "<br>");
+  
+        // Insert a break line inside the table instead of creating a new table
+        const range = selection.getRangeAt(0);
+        const br = document.createElement("br");
+        range.insertNode(br);
+        range.setStartAfter(br);
+        range.setEndAfter(br);
+        selection.removeAllRanges();
+        selection.addRange(range);
       }
     }
   };

@@ -34,7 +34,6 @@ const App = () => {
             }
             th, td {
                 padding: 4px;
-                text-align: center;
             }
         </style>
     </head>
@@ -68,14 +67,6 @@ const App = () => {
   return (
     <div className="parent-container">
       <h1>Build Your HTML file</h1>
-      <div className="button-container">
-        <button
-          onClick={handleDownload}
-          className="primary-button"
-        >
-          Download as HTML
-        </button>
-      </div>
       <CustomSunEditor setContent={setContent} content={content} handleDownload={handleDownload} />
       <Analytics />
       <SpeedInsights />
