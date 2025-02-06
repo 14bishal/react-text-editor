@@ -26,30 +26,30 @@ const CustomSunEditor = ({content='', setContent=() => {}, handleDownload=() => 
     }
   }, []);
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      const selection = window.getSelection();
-      let anchorNode = selection.anchorNode;
+  // const handleKeyDown = (event) => {
+  //   if (event.key === "Enter") {
+  //     const selection = window.getSelection();
+  //     let anchorNode = selection.anchorNode;
   
-      // Ensure anchorNode is an element (not a text node)
-      if (anchorNode.nodeType === 3) {
-        anchorNode = anchorNode.parentElement; // Get its parent element
-      }
+  //     // Ensure anchorNode is an element (not a text node)
+  //     if (anchorNode.nodeType === 3) {
+  //       anchorNode = anchorNode.parentElement; // Get its parent element
+  //     }
   
-      if (anchorNode && anchorNode.closest("table")) {
-        event.preventDefault(); // Stop auto table creation
+  //     if (anchorNode && anchorNode.closest("table")) {
+  //       event.preventDefault(); // Stop auto table creation
   
-        // Insert a break line inside the table instead of creating a new table
-        const range = selection.getRangeAt(0);
-        const br = document.createElement("br");
-        range.insertNode(br);
-        range.setStartAfter(br);
-        range.setEndAfter(br);
-        selection.removeAllRanges();
-        selection.addRange(range);
-      }
-    }
-  };
+  //       // Insert a break line inside the table instead of creating a new table
+  //       const range = selection.getRangeAt(0);
+  //       const br = document.createElement("br");
+  //       range.insertNode(br);
+  //       range.setStartAfter(br);
+  //       range.setEndAfter(br);
+  //       selection.removeAllRanges();
+  //       selection.addRange(range);
+  //     }
+  //   }
+  // };
 
   const handleChange = (val) => {
     setContent(val);
@@ -98,9 +98,10 @@ const CustomSunEditor = ({content='', setContent=() => {}, handleDownload=() => 
           colorList: COLOR_LIST,
         }}
         setDefaultStyle="height: 700px; overflow: auto; border: 2px solid #CBD5E1 !important;"
-        autoFocus
+        // autoFocus
+        placeholder="Enter...."
         getSunEditorInstance={getSunEditorInstance}
-        onKeyDown={handleKeyDown}
+        // onKeyDown={handleKeyDown}
       />
     
     </>
