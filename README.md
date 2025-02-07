@@ -11,4 +11,4 @@ You can download the html file of the content written on the editor
 ```https://html-file-generator.vercel.app/```
 
 
-<img width="1440" alt="Screenshot 2024-12-22 at 6 51 44 PM" src="https://github.com/user-attachments/assets/a3f51022-6259-4eec-a52d-c3f09f34c70a" />
+<img width="1421" alt="Screenshot 2025-02-07 at 11 30 51 PM" src="https://github.com/user-attachments/assets/37d0fcd7-c8eb-4bc8-b3b1-db0dc72e9202" />
