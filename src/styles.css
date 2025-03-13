@@ -38,6 +38,11 @@ body {
   color: #fff;
 }
 
+.sun-editor-editable * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .save {
   border: none;
   background: #000;

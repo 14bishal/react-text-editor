@@ -73,6 +73,21 @@ const CustomSunEditor = ({content='', setContent=() => {}, handleDownload=() => 
     }
   };
 
+  const handlePaste = (e) => {
+    e.preventDefault();
+
+    const clipboardData = e.clipboardData || window.clipboardData;
+    let pastedData = clipboardData.getData("text/html");
+
+    pastedData = pastedData.replace(/margin-left:\s?-?\d+px;/g, "margin-left:0px;");
+    pastedData = pastedData.replace(/margin-right:\s?-?\d+px;/g, "margin-right:0px;");
+
+    const editor = getSunEditorInstance();
+    if(editor) {
+      editor.insertHTML(pastedData);
+    }
+  }
+
   return (
     <>
       <div className="button-container">
@@ -100,7 +115,10 @@ const CustomSunEditor = ({content='', setContent=() => {}, handleDownload=() => 
         setDefaultStyle="height: 700px; overflow: auto; border: 2px solid #CBD5E1 !important;"
         // autoFocus
         placeholder="Enter...."
-        getSunEditorInstance={getSunEditorInstance}
+        getSunEditorInstance={(editor) => {
+          getSunEditorInstance(editor);
+          editor.core.context.element.wysiwyg.addEventListener("paste", handlePaste);
+        }}
         // onKeyDown={handleKeyDown}
       />
     
